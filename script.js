@@ -1,22 +1,17 @@
-//selecciond de formulario
+// Selección del formulario
 const loginForm = document.getElementById('loginForm');
 
-// Evento al enviar
 loginForm.addEventListener('submit', function(event) {
-  event.preventDefault(); // no recarga la pagina
+  event.preventDefault(); // No recarga la página
 
- valores
-  const email = document.getElementById('loginEmail').value;
-  const password = document.getElementById('loginPassword').value;
+  const email = document.getElementById('loginEmail').value.trim();
+  const password = document.getElementById('loginPassword').value.trim();
 
-  // Validación simple 
-  if(email === "" || password === "") {
-    alert("Por favor, completa todos los campos.");
-  } else {
-    alert(`¡Bienvenido, ${email}!`);
-    // agregar redirección o lógica de login
-
+  if (!email || !password) {
+    alert('Por favor, completa todos los campos.');
+    return;
   }
+  alert(`¡Bienvenido, ${email}!`);
+
+
 });
-
-
